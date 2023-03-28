@@ -1,3 +1,5 @@
+package Net;
+
 public class Net {
 
     private static String[] erreichbar = {
