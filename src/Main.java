@@ -18,14 +18,7 @@ public class Main {
 
     public static boolean pruefePing(String eingabe) {
 
-        String eingabePing = ping(eingabe);
-
-        if (eingabePing.contains("Zeitüberschreitung")) {
-            return false;
-        } else {
-            return true;
-        }
-
+       return !pruefeZeitueberschreitung(eingabe);
     }
 
     public static int pruefeAllePings(){
@@ -45,21 +38,19 @@ public class Main {
         return count;
     }
 
-    public static ArrayList<String> antwortendePings(){
+    public static ArrayList<String> antwortendePings() {
 
-        String ping = null;
-
+        ArrayList<String> pingListe = new ArrayList<>();
 
         for (int i = 1; i <= 128; i++) {
-            ping = "194.94.2.";
-            ping += Integer.toString(i);
+            String ping = "194.94.2." + i;
 
             if (pruefePing(ping)) {
-                antwortendePings().add(ping);
+                pingListe.add(ping);
             }
         }
 
-        return antwortendePings();
+        return pingListe;
     }
 
 
@@ -83,6 +74,8 @@ public class Main {
         System.out.println(pruefePing(ping1));
 
         System.out.println(pruefeAllePings());
+
+        System.out.println(antwortendePings());
 
     }
 
