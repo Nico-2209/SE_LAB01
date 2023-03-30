@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import static Net.Net.*;
+
 
 public class Main {
 
@@ -66,8 +66,6 @@ public class Main {
         String ping1 = "194.94.2.1";
         String ping2 = "194.94.2.1";
 
-
-        String pingErgebniss = ping(ping1) + ping(ping2);
 
         System.out.println(pruefeZeitueberschreitung(ping1));
 
